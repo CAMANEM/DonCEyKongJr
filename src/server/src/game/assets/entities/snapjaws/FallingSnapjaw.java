@@ -2,9 +2,8 @@ package game.assets.entities.snapjaws;
 
 public final class FallingSnapjaw extends Snapjaw {
 
-    public FallingSnapjaw(Integer score, Integer posX, Integer posY) {
-        super(FallingSnapjaw.class.getSimpleName(), posX, posY, score);
-        this.sprite = SNAPJAW_FALLING_SPRITE;
+    public FallingSnapjaw(Integer posX, Integer posY, Integer score) {
+        super(posX, posY, score, SNAPJAW_FALLING_SPRITE);
     }
 
     public void move(Direction direction) {

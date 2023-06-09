@@ -1,15 +1,13 @@
 package game.assets.entities.snapjaws;
 
 import game.assets.entities.Entity;
-import game.global.Constants;
 
 public abstract class Snapjaw extends Entity {
 
     protected Integer speed;
 
-    public Snapjaw(String id, Integer posX, Integer posY, Integer score) {
-        super(id, posX, posY, String.valueOf(SnapjawState.IDLE), score);
-        this.speed = Constants.SNAPJAW_SPEED_MIN;
+    public Snapjaw(Integer posX, Integer posY, Integer score, String sprite) {
+        super(posX, posY, score, sprite, String.valueOf(SnapjawState.IDLE));
     }
 
     public SnapjawState getStateAsSnapjawState() {

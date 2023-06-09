@@ -5,19 +5,13 @@ import game.global.DataTypes;
 
 public abstract class Asset implements Constants, DataTypes {
 
-    protected final String id;
+    protected String id;
 
     protected Boolean visible;
 
     protected Integer[] position;
 
     protected String sprite;
-
-    public Asset(String id, Integer posX, Integer posY) {
-        this.id = id;
-        this.visible = true;
-        this.position = new Integer[]{posX, posY};
-    }
 
     public String getId() {
         return id;
