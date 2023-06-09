@@ -1,2 +1,8 @@
-*.idea
+# IntelliJ - CLion
+.idea
+
+# DonCEy Kong Jr - Server (SE)
+out/
+
+# DonCEy Kong Jr - Client (CL)
 cmake-build-*/

@@ -1,32 +1,51 @@
-# DonCEyKongJr
-video game inspired by Donkey Kong Jr from 1982.
+# DonCEy Kong Jr
 
-## Descrition
+### DEMO
 
-In this game Mario have imprisioned Donkey Kong, so its son,
-a little gorilla named Donkey Kong Jr has to rescue him.
-He can walk and climb vines to avoid Mario's traps and get to his
-father to set him free.
+![DEMO](https://github.com/CAMANEM/DonCEyKongJr/tree/main/docs/demo.gif)
 
-The game has a server in Java and clients in C. You can see more details about the specifications of the game in the project documentation.
+##
 
-RestauranTEC was developed as the third [project](docs/) of the CE3104 "Compiler and Interpreter Languages" course of the <a href="https://www.tec.ac.cr/programas-academicos/licenciatura-ingenieria-computadores">Computer Engineering</a> career, <a href="https://www.tec.ac.cr">Instituto Tecnológico de Costa Rica</a>.
+### About
 
+_DonCEy Kong Jr is based on Donkey Kong Jr., the sequel to the Donkey Kong arcade video game, released in 1982, programmed for Nintendo by Shigeru Miyamoto. Known by the acronym DK Jr. This time Mario holds Donkey Kong prisoner (the only time Mario has been an antagonist), and his son, a little gorilla named Donkey Kong Jr. has to rescue him._
 
-## developer configuration
+> Check out more information at [DonCEy Kong Jr 🦍 Docs](https://github.com/CAMANEM/DonCEyKongJr/tree/main/docs)
 
-* Install MinGW
-* Download and extract "SDL2-devel-2.26.5-mingw.tar.gz"
-  from [here](https://github.com/libsdl-org/SDL/releases/tag/release-2.26.5).
-* On the extracted file go to "i686-w64-mingw32/"
-<p align="center">
-  <img width="700" height="400" src="docs/SDL2 rute.png">
-</p>
+### Development environment
 
-* Move all the files in "i686-w64-mingw32/" to the MinGW directory (usually "C:\MinGW") 
+- OS : [Windows 10](https://www.microsoft.com/es-es/software-download/windows10)
+- IDE : [IntelliJ](https://www.jetbrains.com/idea/) & [CLion](https://www.jetbrains.com/clion/)
+- GUI : [SDL](https://libsdl.org/)
 
-<p align="center">
-  <img width="700" height="300" src="docs/SDL2 rute 2.png">
-</p>
+##
 
-Now you should be able to run SDL2 using the CMakeList.txt
+### Contributors
+
+- [Sebastián M. Chen Cerdas](https://github.com/seballoll)
+- [Valerie M. Hernández Fernández](https://github.com/valeriehernandez-7)
+- [Oscar M. Soto Varela](https://github.com/CAMANEM)
+
+### University
+
+[Costa Rica Institute of Technology](https://www.tec.ac.cr/)
+
+### Site
+
+[Cartago Central Technology Campus](https://www.tec.ac.cr/ubicaciones/campus-tecnologico-central-cartago)
+
+### Degree
+
+[Computer Engineering](https://www.tec.ac.cr/en/carreras/licentiates-degree-computer-engineering)
+
+### Course
+
+[CE3104 - Languages, Compilers and Interpreters](https://www.tec.ac.cr/planes-estudio/licenciatura-ingenieria-computadores)
+
+### Assignment
+
+Project
+
+### Semester
+
+I 2023
