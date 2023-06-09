@@ -8,7 +8,7 @@
 
 ### About
 
-_DonCEy Kong Jr is based on Donkey Kong Jr., the sequel to the Donkey Kong arcade video game, released in 1982, programmed for Nintendo by Shigeru Miyamoto. Known by the acronym DK Jr. This time Mario holds Donkey Kong prisoner (the only time Mario has been an antagonist), and his son, a little gorilla named Donkey Kong Jr. has to rescue him._
+DonCEy Kong Jr is based on Donkey Kong Jr., the sequel to the Donkey Kong arcade video game, released in 1982, programmed for Nintendo by Shigeru Miyamoto. Known by the acronym DK Jr. This time Mario holds Donkey Kong prisoner (the only time Mario has been an antagonist), and his son, a little gorilla named Donkey Kong Jr. has to rescue him.
 
 > Check out more information at [DonCEy Kong Jr 🦍 Docs](https://github.com/CAMANEM/DonCEyKongJr/tree/main/docs)
 
@@ -18,13 +18,11 @@ _DonCEy Kong Jr is based on Donkey Kong Jr., the sequel to the Donkey Kong arcad
 - IDE : [IntelliJ](https://www.jetbrains.com/idea/) & [CLion](https://www.jetbrains.com/clion/)
 - GUI : [SDL](https://libsdl.org/)
 
-##
-
 ### Contributors
 
 - [Sebastián M. Chen Cerdas](https://github.com/seballoll)
 - [Valerie M. Hernández Fernández](https://github.com/valeriehernandez-7)
-- [Oscar M. Soto Varela](https://github.com/CAMANEM)
+- [Óscar M. Soto Varela](https://github.com/CAMANEM)
 
 ### University
 
