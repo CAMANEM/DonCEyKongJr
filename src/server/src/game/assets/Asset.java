@@ -13,6 +13,13 @@ public abstract class Asset implements Constants, DataTypes {
 
     protected String sprite;
 
+    public Asset(Integer posX, Integer posY, String sprite) {
+        this.id = this.getClass().getSimpleName();
+        this.visible = true;
+        this.position = new Integer[]{posX, posY};
+        this.sprite = sprite;
+    }
+
     public String getId() {
         return id;
     }
