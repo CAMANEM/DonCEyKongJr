@@ -6,7 +6,7 @@ import game.assets.entities.Entity;
 public abstract class Fruit extends Entity {
 
     public Fruit(Integer posX, Integer posY, Integer score, String sprite) {
-        super(posX, posY, score, sprite, String.valueOf(FruitState.HANGING));
+        super(posX, posY, score, sprite);
     }
 
     public FruitState getStateAsFruitState() {

@@ -9,15 +9,22 @@ public interface DataTypes {
         RIGHT
     }
 
-    enum FruitState {
+    enum JuniorState {
+        IDLE,
+        RUNNING,
         HANGING,
+        WINNER
+    }
+
+    enum FruitState {
+        IDLE,
         EATEN,
         FALLING
     }
 
     enum SnapjawState {
         IDLE,
-        ATTACKING
+        CHASING
     }
 
 }

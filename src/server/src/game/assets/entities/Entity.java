@@ -8,9 +8,9 @@ public abstract class Entity extends Asset {
 
     protected Integer score;
 
-    public Entity(Integer posX, Integer posY, Integer score, String sprite, String state) {
+    public Entity(Integer posX, Integer posY, Integer score, String sprite) {
         super(posX, posY, sprite);
-        this.state = state;
+        this.state = NEW_GAME_STATE;
         this.score = score;
     }
 

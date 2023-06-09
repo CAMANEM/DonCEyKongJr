@@ -47,6 +47,7 @@ public class DonCEyKongJrServer implements Constants {
 
         for (Fruit f : fruits) {
             System.out.println(f.getId());
+            System.out.println(f.getSprite());
             System.out.println(f.getVisible());
             System.out.println(f.getScore());
             System.out.println(f.getState());
@@ -57,6 +58,7 @@ public class DonCEyKongJrServer implements Constants {
 
         for (Snapjaw s : snapjaws) {
             System.out.println(s.getId());
+            System.out.println(s.getSprite());
             System.out.println(s.getVisible());
             System.out.println(s.getScore());
             System.out.println(s.getState());

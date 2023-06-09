@@ -2,6 +2,8 @@ package game.global;
 
 public interface Constants {
 
+    String NEW_GAME_STATE = "IDLE";
+
     Integer VINES_MAX = 11;
     String VINE_SPRITE = "";
     Integer PLATFORM_MAX = 6;
@@ -11,14 +13,17 @@ public interface Constants {
 
 
     Integer FRUIT_FALL_SPEED = 3;
-    String FRUIT_APPLE_SPRITE = "";
-    String FRUIT_BANANA_SPRITE = "";
-    String FRUIT_ORANGE_SPRITE = "";
+    String FRUIT_APPLE_IDLE_SPRITE = "";
+    String FRUIT_BANANA_IDLE_SPRITE = "";
+    String FRUIT_ORANGE_IDLE_SPRITE = "";
 
 
     Integer SNAPJAW_SPEED_MIN = 3;
-    String SNAPJAW_FALLING_SPRITE = "";
-    String SNAPJAW_HANGING_SPRITE = "";
+    String SNAPJAW_FALLING_IDLE_SPRITE = "";
+    String SNAPJAW_HANGING_IDLE_SPRITE = "";
+
+
+    String JUNIOR_IDLE_SPRITE = "";
 
 
     String ASCII_NAME =
