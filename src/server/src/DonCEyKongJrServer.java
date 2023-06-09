@@ -18,8 +18,10 @@ I Semester
 2023
 */
 
-public class DonCEyKongJrServer {
+import game.Constants;
+
+public class DonCEyKongJrServer implements Constants {
     public static void main(String[] args) {
-        System.out.println("DonCEy Kong Jr Server");
+        System.out.println("\n" + ASCII_NAME + "\n" + ASCII_DONCEY_JR + "\n" + ASCII_SERVER + "\n");
     }
 }
