@@ -1,6 +1,8 @@
-package game;
+package game.global;
 
 public interface Constants {
+
+    Integer VINES_NUM = 9;
 
     String ASCII_NAME =
         """

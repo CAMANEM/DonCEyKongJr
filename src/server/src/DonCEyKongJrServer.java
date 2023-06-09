@@ -18,7 +18,7 @@ I Semester
 2023
 */
 
-import game.Constants;
+import game.global.Constants;
 
 public class DonCEyKongJrServer implements Constants {
     public static void main(String[] args) {
