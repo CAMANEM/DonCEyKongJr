@@ -4,26 +4,45 @@ public interface Constants {
 
     String NEW_GAME_STATE = "IDLE";
 
-    Integer VINES_MAX = 11;
+    Integer VINE_MAX = 11;
     String VINE_SPRITE = "";
-    Integer PLATFORM_MAX = 6;
-    String PLATFORM_SPRITE = "";
+
+    Integer TRUNK_MAX = 6;
+    String TRUNK_SPRITE = "";
+
     Integer LAND_MAX = 5;
     String LAND_SPRITE = "";
 
 
     Integer FRUIT_FALL_SPEED = 3;
-    String FRUIT_APPLE_IDLE_SPRITE = "";
-    String FRUIT_BANANA_IDLE_SPRITE = "";
-    String FRUIT_ORANGE_IDLE_SPRITE = "";
+
+    String FRUIT_APPLE_SPRITE = "";
+    String FRUIT_BANANA_SPRITE = "";
+    String FRUIT_ORANGE_SPRITE = "";
 
 
     Integer SNAPJAW_SPEED_MIN = 3;
-    String SNAPJAW_FALLING_IDLE_SPRITE = "";
-    String SNAPJAW_HANGING_IDLE_SPRITE = "";
 
+    String SNAPJAW_FALLING_DOWN_SPRITE = "";
+    String SNAPJAW_FALLING_LEFT_SPRITE = "";
+    String SNAPJAW_FALLING_RIGHT_SPRITE = "";
+    String SNAPJAW_HANGING_UP_SPRITE = "";
+    String SNAPJAW_HANGING_DOWN_SPRITE = "";
+    String SNAPJAW_HANGING_LEFT_SPRITE = "";
+    String SNAPJAW_HANGING_RIGHT_SPRITE = "";
+
+
+    Integer JUNIOR_NORMAL_SPEED = 2;
+    Integer JUNIOR_HANGING_SPEED = 4;
 
     String JUNIOR_IDLE_SPRITE = "";
+    String JUNIOR_JUMPING_LEFT_SPRITE = "";
+    String JUNIOR_JUMPING_RIGHT_SPRITE = "";
+    String JUNIOR_RUNNING_LEFT_SPRITE = "";
+    String JUNIOR_RUNNING_RIGHT_SPRITE = "";
+    String JUNIOR_HANGING_SPRITE = "";
+    String JUNIOR_HANGING_LEFT_SPRITE = "";
+    String JUNIOR_HANGING_RIGHT_SPRITE = "";
 
 
     String ASCII_NAME =

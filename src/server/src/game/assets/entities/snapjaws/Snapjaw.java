@@ -18,6 +18,15 @@ public abstract class Snapjaw extends Entity {
         this.state = String.valueOf(state);
     }
 
+    public void move(Direction direction) {
+        switch (direction) {
+            case UP -> setPosition(this.position[0], this.position[1] - this.speed);
+            case DOWN -> setPosition(this.position[0], this.position[1] + this.speed);
+            case LEFT -> setPosition(this.position[0] - this.speed, this.position[1]);
+            case RIGHT -> setPosition(this.position[0] + this.speed, this.position[1]);
+        }
+    }
+
     public void speedUp(Integer level) {
         this.speed = (this.speed * level);
     }

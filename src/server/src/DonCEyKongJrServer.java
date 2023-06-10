@@ -26,10 +26,11 @@ import game.assets.entities.snapjaws.FallingSnapjaw;
 import game.assets.entities.snapjaws.HangingSnapjaw;
 import game.assets.entities.snapjaws.Snapjaw;
 import game.global.Constants;
+import game.global.DataTypes;
 
 import java.util.Arrays;
 
-public class DonCEyKongJrServer implements Constants {
+public class DonCEyKongJrServer implements Constants, DataTypes {
     public static void main(String[] args) {
         System.out.println("\n" + ASCII_NAME + "\n" + ASCII_JUNIOR + "\n" + ASCII_SERVER + "\n");
 

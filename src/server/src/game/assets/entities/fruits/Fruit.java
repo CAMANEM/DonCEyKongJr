@@ -16,4 +16,8 @@ public abstract class Fruit extends Entity {
     public void setStateAsFruitState(FruitState state) {
         this.state = String.valueOf(state);
     }
+
+    public void fall() {
+        setPosition(this.position[0], this.position[1] + FRUIT_FALL_SPEED);
+    }
 }

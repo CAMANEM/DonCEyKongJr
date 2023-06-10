@@ -11,9 +11,13 @@ public interface DataTypes {
 
     enum JuniorState {
         IDLE,
-        RUNNING,
+        JUMPING_LEFT,
+        JUMPING_RIGHT,
+        RUNNING_LEFT,
+        RUNNING_RIGHT,
         HANGING,
-        WINNER
+        HANGING_LEFT,
+        HANGING_RIGHT
     }
 
     enum FruitState {
