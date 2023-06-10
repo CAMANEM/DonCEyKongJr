@@ -5,8 +5,8 @@ import game.assets.entities.Entity;
 
 public abstract class Fruit extends Entity {
 
-    public Fruit(Integer posX, Integer posY, Integer score, String sprite) {
-        super(posX, posY, score, sprite);
+    public Fruit(Integer score, Integer[] rect, String sprite) {
+        super(score, rect, sprite);
     }
 
     public FruitState getStateAsFruitState() {
@@ -18,6 +18,6 @@ public abstract class Fruit extends Entity {
     }
 
     public void fall() {
-        setPosition(this.position[0], this.position[1] + FRUIT_FALL_SPEED);
+        setPosition(this.rectX, this.rectY + FRUIT_FALL_SPEED);
     }
 }

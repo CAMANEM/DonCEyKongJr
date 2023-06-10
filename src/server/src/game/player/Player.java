@@ -25,7 +25,7 @@ public final class Player extends Client {
         this.score = 0;
         this.level = 1;
         this.playing = false;
-        this.junior = new Junior(PLAYER_INITIAL_POS[0], PLAYER_INITIAL_POS[1]);
+        this.junior = new Junior(JUNIOR_RECT);
     }
 
     public Integer getId() {

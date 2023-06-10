@@ -6,8 +6,8 @@ public abstract class Snapjaw extends Entity {
 
     protected Integer speed;
 
-    public Snapjaw(Integer posX, Integer posY, Integer score, String sprite) {
-        super(posX, posY, score, sprite);
+    public Snapjaw(Integer score, Integer[] rect, String sprite) {
+        super(score, rect, sprite);
         this.speed = SNAPJAW_SPEED_MIN;
     }
 

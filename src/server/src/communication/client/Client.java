@@ -1,6 +1,6 @@
 package communication.client;
 
-import global.Constants;
+import utils.Constants;
 
 public abstract class Client implements Constants {
     public Client() {

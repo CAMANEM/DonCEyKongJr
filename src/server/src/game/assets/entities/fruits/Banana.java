@@ -2,7 +2,7 @@ package game.assets.entities.fruits;
 
 public final class Banana extends Fruit {
 
-    public Banana(Integer posX, Integer posY, Integer score) {
-        super(posX, posY, score, FRUIT_BANANA_SPRITE);
+    public Banana(Integer score) {
+        super(score, BANANA_RECT, FRUIT_BANANA_SPRITE);
     }
 }

@@ -1,7 +1,7 @@
 package game.assets;
 
-import global.Constants;
-import global.DataTypes;
+import utils.Constants;
+import utils.DataTypes;
 
 public abstract class Asset implements Constants, DataTypes {
 
@@ -9,14 +9,20 @@ public abstract class Asset implements Constants, DataTypes {
 
     protected Boolean visible;
 
-    protected Integer[] position;
+    protected Integer rectX;
+    protected Integer rectY;
+    protected Integer rectW;
+    protected Integer rectH;
 
     protected String sprite;
 
-    public Asset(Integer posX, Integer posY, String sprite) {
+    public Asset(Integer[] rect, String sprite) {
         this.id = this.getClass().getSimpleName();
         this.visible = true;
-        this.position = new Integer[]{posX, posY};
+        this.rectX = rect[0];
+        this.rectY = rect[1];
+        this.rectW = rect[2];
+        this.rectH = rect[3];
         this.sprite = sprite;
     }
 
@@ -32,13 +38,33 @@ public abstract class Asset implements Constants, DataTypes {
         this.visible = visible;
     }
 
-    public Integer[] getPosition() {
-        return position;
+    public Integer getX() {
+        return this.rectX;
     }
 
-    public void setPosition(Integer posX, Integer posY) {
-        this.position[0] = posX;
-        this.position[1] = posY;
+    public Integer getY() {
+        return this.rectY;
+    }
+
+    public Integer[] getPosition() {
+        return new Integer[]{this.rectX, this.rectY};
+    }
+
+    public void setPosition(Integer x, Integer y) {
+        this.rectX = x;
+        this.rectY = y;
+    }
+
+    public Integer getW() {
+        return this.rectW;
+    }
+
+    public Integer getH() {
+        return this.rectH;
+    }
+
+    public Integer[] getSize() {
+        return new Integer[]{this.rectW, this.rectH};
     }
 
     public String getSprite() {

@@ -6,8 +6,8 @@ public final class Junior extends Asset {
 
     private String state;
 
-    public Junior(Integer posX, Integer posY) {
-        super(posX, posY, JUNIOR_IDLE_SPRITE);
+    public Junior(Integer[] rect) {
+        super(rect, JUNIOR_IDLE_SPRITE);
         this.state = NEW_GAME_STATE;
     }
 
@@ -33,10 +33,10 @@ public final class Junior extends Asset {
             speed = JUNIOR_HANGING_SPEED;
         }
         switch (direction) {
-            case UP -> setPosition(this.position[0], this.position[1] - speed);
-            case DOWN -> setPosition(this.position[0], this.position[1] + speed);
-            case LEFT -> setPosition(this.position[0] - speed, this.position[1]);
-            case RIGHT -> setPosition(this.position[0] + speed, this.position[1]);
+            case UP -> setPosition(this.rectX, this.rectY - speed);
+            case DOWN -> setPosition(this.rectX, this.rectY + speed);
+            case LEFT -> setPosition(this.rectX - speed, this.rectY);
+            case RIGHT -> setPosition(this.rectX + speed, this.rectY);
         }
     }
 

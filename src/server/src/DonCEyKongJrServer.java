@@ -26,8 +26,8 @@ import game.assets.entities.snapjaws.FallingSnapjaw;
 import game.assets.entities.snapjaws.HangingSnapjaw;
 import game.assets.entities.snapjaws.Snapjaw;
 import game.player.Player;
-import global.Constants;
-import global.DataTypes;
+import utils.Constants;
+import utils.DataTypes;
 
 import java.util.Arrays;
 
@@ -37,14 +37,14 @@ public class DonCEyKongJrServer implements Constants, DataTypes {
 
         Fruit[] fruits =
                 {
-                        new Banana(500, 6, 6),
-                        new Apple(157, 5, 3),
-                        new Orange(888, 4, 6)
+                        new Banana(500),
+                        new Apple(157),
+                        new Orange(888)
                 };
         Snapjaw[] snapjaws =
                 {
-                        new FallingSnapjaw(500, 5, 8),
-                        new HangingSnapjaw(5, 100, 10)
+                        new FallingSnapjaw(500),
+                        new HangingSnapjaw(5)
                 };
 
         Player[] players = {
@@ -61,6 +61,7 @@ public class DonCEyKongJrServer implements Constants, DataTypes {
             System.out.println(f.getState());
             System.out.println(f.getStateAsFruitState());
             System.out.println(Arrays.toString(f.getPosition()));
+            System.out.println(Arrays.toString(f.getSize()));
             System.out.println("\n\n");
         }
 
@@ -72,6 +73,7 @@ public class DonCEyKongJrServer implements Constants, DataTypes {
             System.out.println(s.getState());
             System.out.println(s.getStateAsSnapjawState());
             System.out.println(Arrays.toString(s.getPosition()));
+            System.out.println(Arrays.toString(s.getSize()));
             System.out.println("\n\n");
         }
 
