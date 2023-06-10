@@ -4,7 +4,9 @@ import game.assets.Asset;
 
 public abstract class Hanger extends Asset {
 
+    private static Integer hangersGenerated = 0;
+
     public Hanger(Integer[] rect, String sprite) {
-        super(rect, sprite);
+        super(++hangersGenerated, rect, sprite);
     }
 }

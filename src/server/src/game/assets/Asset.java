@@ -16,8 +16,8 @@ public abstract class Asset implements Constants, DataTypes {
 
     protected String sprite;
 
-    public Asset(Integer[] rect, String sprite) {
-        this.id = this.getClass().getSimpleName();
+    public Asset(Integer num, Integer[] rect, String sprite) {
+        this.id = this.getClass().getSimpleName() + "_" + num;
         this.visible = true;
         this.rectX = rect[0];
         this.rectY = rect[1];

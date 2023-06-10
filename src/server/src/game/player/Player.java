@@ -1,12 +1,14 @@
 package game.player;
 
-import communication.client.Client;
+import game.assets.entities.fruits.Fruit;
 import game.assets.junior.Junior;
 import game.play.Play;
+import utils.Constants;
+import utils.DataTypes;
 
-public final class Player extends Client {
+public final class Player {
 
-    private static Integer activePlayers = 0;
+    private static Integer playersGenerated = 0;
 
     private Integer id;
     private Integer health;
@@ -18,14 +20,12 @@ public final class Player extends Client {
 
 
     public Player() {
-        super();
-        activePlayers++;
-        this.id = activePlayers;
-        this.health = PLAYER_HEALTH_MIN;
+        this.id = ++playersGenerated;
+        this.health = Constants.PLAYER_HEALTH_MIN;
         this.score = 0;
         this.level = 1;
         this.playing = false;
-        this.junior = new Junior(JUNIOR_RECT);
+        this.junior = new Junior(Constants.JUNIOR_RECT);
     }
 
     public Integer getId() {
@@ -74,5 +74,16 @@ public final class Player extends Client {
 
     public void setPlaying(Boolean playing) {
         this.playing = playing;
+    }
+
+    public void eatFruit(Fruit fruit) {
+        fruit.setVisible(false);
+        fruit.setState(DataTypes.FruitState.EATEN);
+        this.score += fruit.getScore();
+    }
+
+    public void dropFruit(Fruit fruit) {
+        fruit.setState(DataTypes.FruitState.FALLING);
+        fruit.fall();
     }
 }

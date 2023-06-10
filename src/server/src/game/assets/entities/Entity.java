@@ -8,8 +8,8 @@ public abstract class Entity extends Asset {
 
     protected Integer score;
 
-    public Entity(Integer score, Integer[] rect, String sprite) {
-        super(rect, sprite);
+    public Entity(Integer num, Integer score, Integer[] rect, String sprite) {
+        super(num, rect, sprite);
         this.state = JuniorState.IDLE;
         this.score = score;
     }

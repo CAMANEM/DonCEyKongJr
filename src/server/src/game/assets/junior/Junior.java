@@ -6,7 +6,7 @@ public final class Junior extends Asset {
     private JuniorState state;
 
     public Junior(Integer[] rect) {
-        super(rect, JUNIOR_IDLE_SPRITE);
+        super(null, rect, JUNIOR_IDLE_SPRITE);
         this.state = JuniorState.IDLE;
     }
 
