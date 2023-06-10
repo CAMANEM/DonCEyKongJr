@@ -9,12 +9,8 @@ public abstract class Fruit extends Entity {
         super(score, rect, sprite);
     }
 
-    public FruitState getStateAsFruitState() {
-        return FruitState.valueOf(this.state);
-    }
-
-    public void setStateAsFruitState(FruitState state) {
-        this.state = String.valueOf(state);
+    public void setStateAsString(String state) {
+        this.state = FruitState.valueOf(state);
     }
 
     public void fall() {

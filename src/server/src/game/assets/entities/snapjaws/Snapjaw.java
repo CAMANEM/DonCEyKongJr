@@ -11,12 +11,8 @@ public abstract class Snapjaw extends Entity {
         this.speed = SNAPJAW_SPEED_MIN;
     }
 
-    public SnapjawState getStateAsSnapjawState() {
-        return SnapjawState.valueOf(this.state);
-    }
-
-    public void setStateAsSnapjawState(SnapjawState state) {
-        this.state = String.valueOf(state);
+    public void setStateAsString(String state) {
+        this.state = SnapjawState.valueOf(state);
     }
 
     public void speedUp(Integer level) {

@@ -67,6 +67,11 @@ public abstract class Asset implements Constants, DataTypes {
         return new Integer[]{this.rectW, this.rectH};
     }
 
+    public void setSize(Integer w, Integer h) {
+        this.rectW = w;
+        this.rectH = h;
+    }
+
     public String getSprite() {
         return sprite;
     }

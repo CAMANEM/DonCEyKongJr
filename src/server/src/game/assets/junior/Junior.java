@@ -3,33 +3,32 @@ package game.assets.junior;
 import game.assets.Asset;
 
 public final class Junior extends Asset {
-
-    private String state;
+    private JuniorState state;
 
     public Junior(Integer[] rect) {
         super(rect, JUNIOR_IDLE_SPRITE);
-        this.state = NEW_GAME_STATE;
+        this.state = JuniorState.IDLE;
     }
 
-    public String getState() {
-        return this.state;
+    public JuniorState getState() {
+        return state;
     }
 
-    public void setState(String state) {
+    public void setState(JuniorState state) {
         this.state = state;
     }
 
-    public JuniorState getStateAsJuniorState() {
-        return JuniorState.valueOf(this.state);
+    public String getStateAsString() {
+        return String.valueOf(this.state);
     }
 
-    public void setStateAsJuniorState(JuniorState state) {
-        this.state = String.valueOf(state);
+    public void setStateAsString(String state) {
+        this.state = JuniorState.valueOf(state);
     }
 
     public void move(Direction direction) {
         Integer speed = JUNIOR_NORMAL_SPEED;
-        if (this.state.equals(String.valueOf(JuniorState.HANGING))) {
+        if (this.state == JuniorState.HANGING) {
             speed = JUNIOR_HANGING_SPEED;
         }
         switch (direction) {
@@ -41,7 +40,7 @@ public final class Junior extends Asset {
     }
 
     public void updateSprite() {
-        switch (JuniorState.valueOf(this.state)) {
+        switch (this.state) {
             case IDLE -> setSprite(JUNIOR_IDLE_SPRITE);
             case JUMPING_LEFT -> setSprite(JUNIOR_JUMPING_LEFT_SPRITE);
             case JUMPING_RIGHT -> setSprite(JUNIOR_JUMPING_RIGHT_SPRITE);

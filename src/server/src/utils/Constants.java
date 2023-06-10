@@ -4,8 +4,9 @@ public interface Constants {
 
     // Game
 
-    String NEW_GAME_STATE = "IDLE";
-
+    Integer GAME_PLAYERS_MAX = 2;
+    Integer GAME_OBSERVERS_MAX = 2;
+    Integer[] GAME_WINDOW_SIZE = {600, 500}; // GAME_WINDOW_SIZE = {w, h}
 
     // Player
     Integer PLAYER_HEALTH_MIN = 1; // PLAYER_HEALTH_MIN > 1

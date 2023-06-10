@@ -4,23 +4,29 @@ import game.assets.Asset;
 
 public abstract class Entity extends Asset {
 
-    protected String state;
+    protected Enum state;
 
     protected Integer score;
 
     public Entity(Integer score, Integer[] rect, String sprite) {
         super(rect, sprite);
-        this.state = NEW_GAME_STATE;
+        this.state = JuniorState.IDLE;
         this.score = score;
     }
 
-    public String getState() {
+    public Enum getState() {
         return this.state;
     }
 
-    public void setState(String state) {
+    public String getStateAsString() {
+        return String.valueOf(this.state);
+    }
+
+    public void setState(Enum state) {
         this.state = state;
     }
+
+    public abstract void setStateAsString(String state);
 
     public Integer getScore() {
         return score;

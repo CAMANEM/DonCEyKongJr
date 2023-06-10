@@ -27,13 +27,17 @@ import game.assets.entities.snapjaws.HangingSnapjaw;
 import game.assets.entities.snapjaws.Snapjaw;
 import game.player.Player;
 import utils.Constants;
-import utils.DataTypes;
 
 import java.util.Arrays;
 
-public class DonCEyKongJrServer implements Constants, DataTypes {
+public class DonCEyKongJrServer {
     public static void main(String[] args) {
-        System.out.println("\n" + ASCII_NAME + "\n" + ASCII_JUNIOR + "\n" + ASCII_SERVER + "\n");
+        System.out.println("\n" + Constants.ASCII_NAME + "\n" + Constants.ASCII_JUNIOR + "\n" + Constants.ASCII_SERVER + "\n");
+
+
+        // TODO : delete all lines below
+
+        // testing zone
 
         Fruit[] fruits =
                 {
@@ -59,7 +63,7 @@ public class DonCEyKongJrServer implements Constants, DataTypes {
             System.out.println(f.getVisible());
             System.out.println(f.getScore());
             System.out.println(f.getState());
-            System.out.println(f.getStateAsFruitState());
+            System.out.println(f.getStateAsString());
             System.out.println(Arrays.toString(f.getPosition()));
             System.out.println(Arrays.toString(f.getSize()));
             System.out.println("\n\n");
@@ -71,7 +75,7 @@ public class DonCEyKongJrServer implements Constants, DataTypes {
             System.out.println(s.getVisible());
             System.out.println(s.getScore());
             System.out.println(s.getState());
-            System.out.println(s.getStateAsSnapjawState());
+            System.out.println(s.getStateAsString());
             System.out.println(Arrays.toString(s.getPosition()));
             System.out.println(Arrays.toString(s.getSize()));
             System.out.println("\n\n");
