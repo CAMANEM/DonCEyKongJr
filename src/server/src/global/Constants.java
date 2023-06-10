@@ -1,6 +1,9 @@
-package game.global;
+package global;
 
 public interface Constants {
+
+    Integer PLAYER_HEALTH_MIN = 1;
+    Integer[] PLAYER_INITIAL_POS = {25, 500};
 
     String NEW_GAME_STATE = "IDLE";
 

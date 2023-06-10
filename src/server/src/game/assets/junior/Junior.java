@@ -1,10 +1,22 @@
-package game.assets.entities.junior;
+package game.assets.junior;
 
-import game.assets.entities.Entity;
+import game.assets.Asset;
 
-public class Junior extends Entity {
+public final class Junior extends Asset {
+
+    private String state;
+
     public Junior(Integer posX, Integer posY) {
-        super(posX, posY, 0, JUNIOR_IDLE_SPRITE);
+        super(posX, posY, JUNIOR_IDLE_SPRITE);
+        this.state = NEW_GAME_STATE;
+    }
+
+    public String getState() {
+        return this.state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 
     public JuniorState getStateAsJuniorState() {

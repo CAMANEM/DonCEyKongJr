@@ -1,7 +1,7 @@
 package game.assets;
 
-import game.global.Constants;
-import game.global.DataTypes;
+import global.Constants;
+import global.DataTypes;
 
 public abstract class Asset implements Constants, DataTypes {
 

@@ -1,4 +1,4 @@
-package game.global;
+package global;
 
 public interface DataTypes {
 
