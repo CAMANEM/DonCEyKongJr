@@ -18,14 +18,15 @@ I Semester
 2023
 */
 
-import game.assets.entities.EntityFactory;
+import game.assets.AssetFactoryProducer;
+import game.assets.entities.Entity;
+import game.assets.entities.EntityAbstractFactory;
 import game.assets.entities.fruits.Fruit;
 import game.assets.entities.fruits.Orange;
 import game.assets.entities.snapjaws.HangingSnapjaw;
 import game.assets.entities.snapjaws.Snapjaw;
 import game.player.Player;
 import utils.Constants;
-import utils.DataTypes;
 
 import java.util.Arrays;
 
@@ -38,21 +39,27 @@ public class DonCEyKongJrServer {
 
         // testing zone
 
-        EntityFactory EF = new EntityFactory();
+        EntityAbstractFactory fruitFactory = AssetFactoryProducer.getEntityFactory("Fruit");
+
+        Entity ff = fruitFactory.getEntity("Banana", 500);
+
+        EntityAbstractFactory snapjawFactory = AssetFactoryProducer.getEntityFactory("Snapjaw");
+
+        Entity ss = snapjawFactory.getEntity("FallingSnapjaw", 500);
 
         Fruit[] fruits =
                 {
-                        (Fruit) EF.getEntity(DataTypes.Entity.BANANA, 500),
-                        EF.getFruit(DataTypes.Entity.APPLE, 157),
-                        EF.getFruit(DataTypes.Entity.ORANGE, 188),
+                        (Fruit) ff,
+                        (Fruit) fruitFactory.getEntity("Apple", 153),
+                        (Fruit) fruitFactory.getEntity("Orange", 144),
                         new Orange(888)
                 };
         Snapjaw[] snapjaws =
                 {
-                        (Snapjaw) EF.getEntity(DataTypes.Entity.FALLINGSNAPJAW, 500),
-                        EF.getSnapjaw(DataTypes.Entity.FALLINGSNAPJAW, 500),
-                        EF.getSnapjaw(DataTypes.Entity.HANGINGSNAPJAW, 188),
-                        new HangingSnapjaw(5)
+                        (Snapjaw) ss,
+                        (Snapjaw) snapjawFactory.getEntity("FallingSnapjaw", 153),
+                        (Snapjaw) snapjawFactory.getEntity("HangingSnapjaw", 144),
+                        new HangingSnapjaw(888)
                 };
 
         Player[] players = {

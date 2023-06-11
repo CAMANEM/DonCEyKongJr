@@ -1,8 +1,9 @@
 package game.assets.map.platforms;
 
 import game.assets.Asset;
+import game.assets.map.Map;
 
-public abstract class Platform extends Asset {
+public abstract class Platform extends Asset implements Map {
 
     private static Integer platformsGenerated = 0;
 
