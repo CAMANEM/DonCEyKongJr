@@ -18,15 +18,19 @@ I Semester
 2023
 */
 
+import communication.Socket.SocketServer;
 import game.Game;
 import game.assets.entities.fruits.Fruit;
 import game.assets.entities.fruits.FruitFactory;
 import game.assets.entities.snapjaws.Snapjaw;
 import game.assets.entities.snapjaws.SnapjawFactory;
 import game.player.Player;
+import javax.json.*;
+
 import org.json.JSONObject;
 import utils.Constants;
 
+import java.io.IOException;
 import java.util.Arrays;
 
 public class DonCEyKongJrServer {
@@ -85,8 +89,20 @@ public class DonCEyKongJrServer {
             System.out.println(p.getUsername());
         }
 
-        JSONObject jo = new JSONObject(fruits[0]);
+        JsonObject jo = Json.createObjectBuilder().add("Fruit", Json.createObjectBuilder().add("ID",fruits[0].getId())).build();
         System.out.println(jo);
+        SocketServer SS = null;
+        try {
+            SS = SocketServer.getInstance();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        try {
+            SS.Write_to_Client();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         System.out.println("game1");
         Game g = new Game(players[0]);
