@@ -1,6 +1,7 @@
 package game.assets.entities;
 
 import game.assets.Asset;
+import utils.DataTypes;
 
 public abstract class Entity extends Asset {
 
@@ -34,5 +35,9 @@ public abstract class Entity extends Asset {
 
     public void setScore(Integer score) {
         this.score = score;
+    }
+
+    public DataTypes.Entity getEntityDataType() {
+        return DataTypes.Entity.valueOf(this.getClass().getSimpleName().toUpperCase());
     }
 }

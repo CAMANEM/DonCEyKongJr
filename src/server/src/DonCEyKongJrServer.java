@@ -18,15 +18,14 @@ I Semester
 2023
 */
 
-import game.assets.entities.fruits.Apple;
-import game.assets.entities.fruits.Banana;
+import game.assets.entities.EntityFactory;
 import game.assets.entities.fruits.Fruit;
 import game.assets.entities.fruits.Orange;
-import game.assets.entities.snapjaws.FallingSnapjaw;
 import game.assets.entities.snapjaws.HangingSnapjaw;
 import game.assets.entities.snapjaws.Snapjaw;
 import game.player.Player;
 import utils.Constants;
+import utils.DataTypes;
 
 import java.util.Arrays;
 
@@ -39,15 +38,20 @@ public class DonCEyKongJrServer {
 
         // testing zone
 
+        EntityFactory EF = new EntityFactory();
+
         Fruit[] fruits =
                 {
-                        new Banana(500),
-                        new Apple(157),
+                        (Fruit) EF.getEntity(DataTypes.Entity.BANANA, 500),
+                        EF.getFruit(DataTypes.Entity.APPLE, 157),
+                        EF.getFruit(DataTypes.Entity.ORANGE, 188),
                         new Orange(888)
                 };
         Snapjaw[] snapjaws =
                 {
-                        new FallingSnapjaw(500),
+                        (Snapjaw) EF.getEntity(DataTypes.Entity.FALLINGSNAPJAW, 500),
+                        EF.getSnapjaw(DataTypes.Entity.FALLINGSNAPJAW, 500),
+                        EF.getSnapjaw(DataTypes.Entity.HANGINGSNAPJAW, 188),
                         new HangingSnapjaw(5)
                 };
 

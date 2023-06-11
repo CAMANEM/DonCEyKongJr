@@ -9,6 +9,22 @@ public interface DataTypes {
         RIGHT
     }
 
+    enum Asset {
+        FRUIT,
+        HANGER,
+        JUNIOR,
+        PLATFORM,
+        SNAPJAW
+    }
+
+    enum Entity {
+        APPLE,
+        BANANA,
+        ORANGE,
+        FALLINGSNAPJAW,
+        HANGINGSNAPJAW
+    }
+
     enum JuniorState {
         IDLE,
         JUMPING_LEFT,
