@@ -6,6 +6,10 @@ public final class FallingSnapjaw extends Snapjaw {
         super(score, SNAPJAW_RECT, SNAPJAW_FALLING_RIGHT_SPRITE);
     }
 
+    public FallingSnapjaw(Integer score, Integer x, Integer y) {
+        super(score, new Integer[]{x, y, SNAPJAW_RECT[2], SNAPJAW_RECT[3]}, SNAPJAW_FALLING_RIGHT_SPRITE);
+    }
+
     @Override
     public void move(Direction direction) {
         switch (direction) {

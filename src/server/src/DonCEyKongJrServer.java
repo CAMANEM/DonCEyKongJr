@@ -19,19 +19,14 @@ I Semester
 */
 
 import game.Game;
-import game.assets.AssetFactoryProducer;
-import game.assets.entities.Entity;
-import game.assets.entities.EntityAbstractFactory;
-import game.assets.entities.fruits.Fruit;
-import game.assets.entities.fruits.Orange;
-import game.assets.entities.snapjaws.HangingSnapjaw;
+import game.assets.entities.fruits.*;
 import game.assets.entities.snapjaws.Snapjaw;
+import game.assets.entities.snapjaws.SnapjawFactory;
 import game.player.Player;
 import org.json.JSONObject;
 import utils.Constants;
 
 import java.util.Arrays;
-import java.util.List;
 
 public class DonCEyKongJrServer {
     public static void main(String[] args) {
@@ -42,27 +37,18 @@ public class DonCEyKongJrServer {
 
         // testing zone
 
-        EntityAbstractFactory fruitFactory = AssetFactoryProducer.getEntityFactory("Fruit");
-
-        Entity ff = fruitFactory.getEntity("Banana", 500);
-
-        EntityAbstractFactory snapjawFactory = AssetFactoryProducer.getEntityFactory("Snapjaw");
-
-        Entity ss = snapjawFactory.getEntity("FallingSnapjaw", 500);
+        FruitFactory FF = new FruitFactory();
+        SnapjawFactory SF = new SnapjawFactory();
 
         Fruit[] fruits =
                 {
-                        (Fruit) ff,
-                        (Fruit) fruitFactory.getEntity("Apple", 153),
-                        (Fruit) fruitFactory.getEntity("Orange", 144),
-                        new Orange(888)
+                        FF.generateFruit(),
+                        FF.generateFruit()
                 };
         Snapjaw[] snapjaws =
                 {
-                        (Snapjaw) ss,
-                        (Snapjaw) snapjawFactory.getEntity("FallingSnapjaw", 153),
-                        (Snapjaw) snapjawFactory.getEntity("HangingSnapjaw", 144),
-                        new HangingSnapjaw(888)
+                        SF.generateSnapjaw(),
+                        SF.generateSnapjaw()
                 };
 
         Player[] players = {
@@ -98,15 +84,9 @@ public class DonCEyKongJrServer {
             System.out.println(p.getUsername());
         }
 
-        JSONObject jo = new JSONObject(ss);
+        JSONObject jo = new JSONObject(fruits[0]);
         System.out.println(jo);
 
         Game g = new Game(players[0]);
-        List<Fruit> ffff = g.getFruits();
-        for (Fruit f:
-             ffff) {
-            System.out.println(f.getId());
-            System.out.println(f.getScore());
-        }
     }
 }

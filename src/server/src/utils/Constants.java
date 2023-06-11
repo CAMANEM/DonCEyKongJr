@@ -61,7 +61,7 @@ public interface Constants {
 
     // Snapjaw
 
-    String[] SNAPJAWS = {"FallingSnapjaw", "HangingSnapjaw"};
+    Map<String, Integer> SNAPJAWS = Map.of("FallingSnapjaw", 150, "HangingSnapjaw", 100);
     Integer SNAPJAW_MAX = 4;
     Integer SNAPJAW_SPEED_MIN = 3; // SNAPJAW_SPEED_MIN > JUNIOR_NORMAL_SPEED
     Integer[] SNAPJAW_RECT = {100, 150, 10, 10}; // SNAPJAW_RECT = {x, y, w, h}
