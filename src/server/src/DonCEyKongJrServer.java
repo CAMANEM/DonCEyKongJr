@@ -26,6 +26,7 @@ import game.assets.entities.fruits.Orange;
 import game.assets.entities.snapjaws.HangingSnapjaw;
 import game.assets.entities.snapjaws.Snapjaw;
 import game.player.Player;
+import org.json.JSONObject;
 import utils.Constants;
 
 import java.util.Arrays;
@@ -94,5 +95,8 @@ public class DonCEyKongJrServer {
         for (Player p : players) {
             System.out.println(p.getUsername());
         }
+
+        JSONObject jo = new JSONObject(ss);
+        System.out.println(jo);
     }
 }
