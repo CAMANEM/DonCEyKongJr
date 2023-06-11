@@ -2,12 +2,12 @@ package game.assets.entities.snapjaws;
 
 public final class FallingSnapjaw extends Snapjaw {
 
-    public FallingSnapjaw(Integer score) {
-        super(score, SNAPJAW_RECT, SNAPJAW_FALLING_RIGHT_SPRITE);
+    public FallingSnapjaw(Integer id, Integer score) {
+        super(id, score, SNAPJAW_RECT, SNAPJAW_FALLING_RIGHT_SPRITE);
     }
 
-    public FallingSnapjaw(Integer score, Integer x, Integer y) {
-        super(score, new Integer[]{x, y, SNAPJAW_RECT[2], SNAPJAW_RECT[3]}, SNAPJAW_FALLING_RIGHT_SPRITE);
+    public FallingSnapjaw(Integer id, Integer score, Integer x, Integer y) {
+        super(id, score, new Integer[]{x, y, SNAPJAW_RECT[2], SNAPJAW_RECT[3]}, SNAPJAW_FALLING_RIGHT_SPRITE);
     }
 
     @Override

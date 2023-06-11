@@ -2,7 +2,7 @@ package game.assets.map.platforms;
 
 public final class Land extends Platform {
 
-    public Land() {
-        super(LAND_RECT, LAND_SPRITE);
+    public Land(Integer id) {
+        super(id, LAND_RECT[id - 1], LAND_SPRITE);
     }
 }

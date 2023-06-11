@@ -30,16 +30,41 @@ public interface Constants {
 
     // Map
 
-    Integer VINE_MAX = 11;
-    Integer[] VINE_RECT = {0, 0, 2, 40}; // VINE_RECT = {x, y, w, h}
+    Integer[][] VINES_RECT = {
+            {0, 0, 0, 0},
+            {0, 0, 0, 0},
+            {0, 0, 0, 0},
+            {0, 0, 0, 0},
+            {0, 0, 0, 0},
+            {0, 0, 0, 0},
+            {0, 0, 0, 0},
+            {0, 0, 0, 0},
+            {0, 0, 0, 0},
+            {0, 0, 0, 0},
+            {0, 0, 0, 0}
+    }; // VINE_RECT = {x, y, w, h}
+    Integer VINE_MAX = VINES_RECT.length; // Donkey Kong Jr. Original : 11
     String VINE_SPRITE = "";
 
-    Integer TRUNK_MAX = 6;
-    Integer[] TRUNK_RECT = {0, 0, 40, 5}; // TRUNK_RECT = {x, y, w, h}
+    Integer[][] TRUNK_RECT = {
+            {0, 0, 0, 0},
+            {0, 0, 0, 0},
+            {0, 0, 0, 0},
+            {0, 0, 0, 0},
+            {0, 0, 0, 0},
+            {0, 0, 0, 0}
+    }; // TRUNK_RECT = {x, y, w, h}
+    Integer TRUNK_MAX = TRUNK_RECT.length; // Donkey Kong Jr. Original : 6
     String TRUNK_SPRITE = "";
 
-    Integer LAND_MAX = 5;
-    Integer[] LAND_RECT = {0, 0, 30, 10}; // LAND_RECT = {x, y, w, h}
+    Integer[][] LAND_RECT = {
+            {0, 0, 0, 0},
+            {0, 0, 0, 0},
+            {0, 0, 0, 0},
+            {0, 0, 0, 0},
+            {0, 0, 0, 0}
+    }; // LAND_RECT = {x, y, w, h}
+    Integer LAND_MAX = LAND_RECT.length; // Donkey Kong Jr. Original : 5
     String LAND_SPRITE = "";
 
 

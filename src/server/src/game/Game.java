@@ -5,6 +5,7 @@ import game.assets.entities.fruits.FruitFactory;
 import game.assets.entities.snapjaws.Snapjaw;
 import game.assets.entities.snapjaws.SnapjawFactory;
 import game.assets.junior.Junior;
+import game.assets.map.MapFactory;
 import game.assets.map.hangers.Vine;
 import game.assets.map.platforms.Land;
 import game.assets.map.platforms.Trunk;
@@ -18,37 +19,62 @@ import java.util.concurrent.TimeUnit;
 
 public final class Game implements Constants, DataTypes {
 
-    private Player player;
-    private Junior junior;
-    private List<Fruit> fruits;
-    private List<Snapjaw> snapjaws;
-    private List<Land> lands;
-    private List<Trunk> trunks;
-    private List<Vine> vines;
-    private FruitFactory FF;
-    private SnapjawFactory SF;
+    private final Player player;
+    private final MapFactory MF;
+    private final FruitFactory FF;
+    private final SnapjawFactory SF;
+    private final List<Vine> vines;
+    private final List<Land> lands;
+    private final List<Trunk> trunks;
+    private final List<Fruit> fruits;
+    private final List<Snapjaw> snapjaws;
+    private final Junior junior;
+
 
     public Game(Player player) {
         this.player = player;
-        this.junior = new Junior(JUNIOR_RECT);
-        this.fruits = new ArrayList<>();
-        this.snapjaws = new ArrayList<>();
+        this.MF = new MapFactory();
+        this.FF = new FruitFactory();
+        this.SF = new SnapjawFactory();
+        this.vines = new ArrayList<>();
         this.lands = new ArrayList<>();
         this.trunks = new ArrayList<>();
-        this.vines = new ArrayList<>();
-        this.FF = new FruitFactory();
+        this.fruits = new ArrayList<>();
+        this.snapjaws = new ArrayList<>();
+        this.junior = new Junior(JUNIOR_RECT);
         newGame();
     }
 
     private void newGame() {
+        generateVines();
+        generateLands();
+        generateTrunks();
         generateFruits();
         generateSnapjaws();
+    }
+
+    private void generateVines() {
+        for (int v = 0; v < VINE_MAX; v++) {
+            this.vines.add(MF.generateVine());
+        }
+    }
+
+    private void generateLands() {
+        for (int v = 0; v < LAND_MAX; v++) {
+            this.lands.add(MF.generateLand());
+        }
+    }
+
+    private void generateTrunks() {
+        for (int v = 0; v < TRUNK_MAX; v++) {
+            this.trunks.add(MF.generateTrunk());
+        }
     }
 
     private void generateFruits() {
         try {
             for (int f = 0; f < FRUIT_MAX; f++) {
-                this.fruits.add(FF.generateFruit());
+                this.fruits.add(this.FF.generateFruit());
                 TimeUnit.MILLISECONDS.sleep(500);
             }
         } catch (InterruptedException e) {
@@ -58,8 +84,8 @@ public final class Game implements Constants, DataTypes {
 
     private void generateSnapjaws() {
         try {
-            for (int f = 0; f < SNAPJAW_MAX; f++) {
-                this.snapjaws.add(SF.generateSnapjaw());
+            for (int s = 0; s < SNAPJAW_MAX; s++) {
+                this.snapjaws.add(this.SF.generateSnapjaw());
                 TimeUnit.MILLISECONDS.sleep(500);
             }
         } catch (InterruptedException e) {

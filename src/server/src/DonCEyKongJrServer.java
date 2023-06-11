@@ -19,7 +19,8 @@ I Semester
 */
 
 import game.Game;
-import game.assets.entities.fruits.*;
+import game.assets.entities.fruits.Fruit;
+import game.assets.entities.fruits.FruitFactory;
 import game.assets.entities.snapjaws.Snapjaw;
 import game.assets.entities.snapjaws.SnapjawFactory;
 import game.player.Player;
@@ -87,6 +88,10 @@ public class DonCEyKongJrServer {
         JSONObject jo = new JSONObject(fruits[0]);
         System.out.println(jo);
 
+        System.out.println("game1");
         Game g = new Game(players[0]);
+
+        System.out.println("game2");
+        Game gg = new Game(players[0]);
     }
 }

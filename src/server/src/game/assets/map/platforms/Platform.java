@@ -5,9 +5,7 @@ import game.assets.map.Map;
 
 public abstract class Platform extends Asset implements Map {
 
-    private static Integer platformsGenerated = 0;
-
-    public Platform(Integer[] rect, String sprite) {
-        super(++platformsGenerated, rect, sprite);
+    public Platform(Integer id, Integer[] rect, String sprite) {
+        super(id, rect, sprite);
     }
 }

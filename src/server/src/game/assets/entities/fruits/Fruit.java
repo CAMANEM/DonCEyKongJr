@@ -5,10 +5,8 @@ import game.assets.entities.Entity;
 
 public abstract class Fruit extends Entity {
 
-    private static Integer fruitsGenerated = 0;
-
-    public Fruit(Integer score, Integer[] rect, String sprite) {
-        super(++fruitsGenerated, score, rect, sprite);
+    public Fruit(Integer id, Integer score, Integer[] rect, String sprite) {
+        super(id, score, rect, sprite);
     }
 
     public void setStateAsString(String state) {

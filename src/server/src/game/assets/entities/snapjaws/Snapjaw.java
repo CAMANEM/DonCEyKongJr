@@ -4,12 +4,10 @@ import game.assets.entities.Entity;
 
 public abstract class Snapjaw extends Entity {
 
-    private static Integer snapjawsGenerated = 0;
-
     protected Integer speed;
 
-    public Snapjaw(Integer score, Integer[] rect, String sprite) {
-        super(++snapjawsGenerated, score, rect, sprite);
+    public Snapjaw(Integer id, Integer score, Integer[] rect, String sprite) {
+        super(id, score, rect, sprite);
         this.speed = SNAPJAW_SPEED_MIN;
     }
 
