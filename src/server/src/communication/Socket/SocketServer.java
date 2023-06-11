@@ -20,16 +20,11 @@ public class SocketServer {
     private Socket s;
     private InputStreamReader din;
     private OutputStreamWriter dout;
-    private BufferedReader br;
 
     private SocketServer() throws IOException {
         this.ss = new ServerSocket(3333);
         System.out.println("waiting for connection...");
-        this.s=ss.accept();
-        System.out.println("Client connected!"+s);
-        this.din = new InputStreamReader(s.getInputStream());
-        this.dout = new OutputStreamWriter(s.getOutputStream());
-        this.br = new BufferedReader(new InputStreamReader(System.in));
+
     }
 
     public static SocketServer getInstance() throws IOException {
@@ -43,19 +38,48 @@ public class SocketServer {
 
     }
 
-    public int Write_to_Client() throws IOException {
+    public int WriteToClient(JsonObject input) throws IOException {
+        this.s=ss.accept();
+        System.out.println("Client connected!");
+        this.dout = new OutputStreamWriter(s.getOutputStream());
         System.out.println("writing...");
-        JsonObject yeison = Json.createObjectBuilder().add("pipo","piporin").add("pepe", 30).build();
+        //JsonObject yeison = Json.createObjectBuilder().add("pipo","piporin").add("pepe", 30).build();
 
         System.out.println("JSON:"+"\n");
-        System.out.println(yeison.toString()+"\n");
-        System.out.println("Writing JSON...");
-        dout.write(yeison.toString());
-        dout.flush();
+        System.out.println(input.toString()+"\n");
+        dout.write(input.toString());
         System.out.println("JSON Written to client!");
-        s.close();
-        //ss.close();
+        dout.flush();
+        dout.close();
+        //this.dout = new OutputStreamWriter(s.getOutputStream());
         return 0;
+    }
+
+    public int ReadFromClient() throws IOException {
+        this.s=ss.accept();
+        System.out.println("Client connected!");
+        this.din = new InputStreamReader(s.getInputStream());
+        System.out.println("Reading JSON...");
+        int data = din.read();
+        //System.out.println(data);
+        String InJson = "";
+        while (data != -1) {
+            InJson += (char)data ;
+            //System.out.print((char)data);
+            data = din.read();
+        }
+        System.out.println("JSON read!");
+        System.out.println(InJson);
+        din.close();
+        //this.din = new InputStreamReader(s.getInputStream());
+        return 0;
+    }
+
+    public void CloseSockets() throws IOException {
+
+
+        s.close();
+        ss.close();
     }
 
 }

@@ -89,8 +89,8 @@ public class DonCEyKongJrServer {
             System.out.println(p.getUsername());
         }
 
-        JsonObject jo = Json.createObjectBuilder().add("Fruit", Json.createObjectBuilder().add("ID",fruits[0].getId())).build();
-        System.out.println(jo);
+        JsonObject jo = Json.createObjectBuilder().add("Fruit", Json.createObjectBuilder().add("ID",fruits[0].getId()).add("score",fruits[0].getScore())).build();
+        //System.out.println(jo);
         SocketServer SS = null;
         try {
             SS = SocketServer.getInstance();
@@ -99,7 +99,18 @@ public class DonCEyKongJrServer {
         }
 
         try {
-            SS.Write_to_Client();
+            SS.WriteToClient(jo);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            SS.ReadFromClient();
+        }catch (IOException e){
+            throw new RuntimeException(e);
+        }
+
+        try {
+            SS.CloseSockets();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
