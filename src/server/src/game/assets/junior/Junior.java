@@ -1,6 +1,9 @@
 package game.assets.junior;
 
 import game.assets.Asset;
+import game.assets.entities.fruits.Fruit;
+import game.player.Player;
+import utils.DataTypes;
 
 public final class Junior extends Asset {
     private JuniorState state;
@@ -49,6 +52,18 @@ public final class Junior extends Asset {
             case HANGING -> setSprite(JUNIOR_HANGING_SPRITE);
             case HANGING_LEFT -> setSprite(JUNIOR_HANGING_LEFT_SPRITE);
             case HANGING_RIGHT -> setSprite(JUNIOR_HANGING_RIGHT_SPRITE);
+            case DYING -> setSprite(JUNIOR_DYING_SPRITE);
         }
+    }
+
+    public void eatFruit(Player player, Fruit fruit) {
+        fruit.setVisible(false);
+        fruit.setState(DataTypes.FruitState.EATEN);
+        player.setScore(player.getScore() + fruit.getScore());
+    }
+
+    public void dropFruit(Fruit fruit) {
+        fruit.setState(DataTypes.FruitState.FALLING);
+        fruit.fall();
     }
 }

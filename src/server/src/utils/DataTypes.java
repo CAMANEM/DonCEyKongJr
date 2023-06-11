@@ -17,7 +17,8 @@ public interface DataTypes {
         RUNNING_RIGHT,
         HANGING,
         HANGING_LEFT,
-        HANGING_RIGHT
+        HANGING_RIGHT,
+        DYING
     }
 
     enum FruitState {

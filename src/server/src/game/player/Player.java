@@ -1,12 +1,8 @@
 package game.player;
 
-import game.assets.entities.fruits.Fruit;
-import game.assets.junior.Junior;
-import game.play.Play;
 import utils.Constants;
-import utils.DataTypes;
 
-import java.util.Arrays;
+import java.util.List;
 
 public final class Player {
 
@@ -15,9 +11,6 @@ public final class Player {
     private Integer score;
     private Integer level;
     private Boolean playing;
-    private Junior junior;
-    private Play play;
-
 
     public Player(String username) {
         this.username = username;
@@ -25,11 +18,10 @@ public final class Player {
         this.score = 0;
         this.level = 1;
         this.playing = false;
-        this.junior = new Junior(Constants.JUNIOR_RECT);
     }
 
-    public Integer getId(Player[] players) {
-        return Arrays.asList(players).indexOf(this);
+    public Integer getId(List<Player> players) {
+        return players.indexOf(this);
     }
 
     public String getUsername() {
@@ -56,14 +48,6 @@ public final class Player {
         this.score = score;
     }
 
-    public Junior getJunior() {
-        return junior;
-    }
-
-    public void setJunior(Junior junior) {
-        this.junior = junior;
-    }
-
     public Integer getLevel() {
         return level;
     }
@@ -78,16 +62,5 @@ public final class Player {
 
     public void setPlaying(Boolean playing) {
         this.playing = playing;
-    }
-
-    public void eatFruit(Fruit fruit) {
-        fruit.setVisible(false);
-        fruit.setState(DataTypes.FruitState.EATEN);
-        this.score += fruit.getScore();
-    }
-
-    public void dropFruit(Fruit fruit) {
-        fruit.setState(DataTypes.FruitState.FALLING);
-        fruit.fall();
     }
 }

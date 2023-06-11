@@ -1,11 +1,11 @@
 package utils;
 
+import java.util.Map;
+
 public interface Constants {
 
     // Game
 
-    Integer GAME_PLAYERS_MAX = 2;
-    Integer GAME_OBSERVERS_MAX = 2;
     Integer[] GAME_WINDOW_SIZE = {600, 500}; // GAME_WINDOW_SIZE = {w, h}
 
     // Player
@@ -25,6 +25,7 @@ public interface Constants {
     String JUNIOR_HANGING_SPRITE = "";
     String JUNIOR_HANGING_LEFT_SPRITE = "";
     String JUNIOR_HANGING_RIGHT_SPRITE = "";
+    String JUNIOR_DYING_SPRITE = "";
 
 
     // Map
@@ -44,6 +45,8 @@ public interface Constants {
 
     // Fruit
 
+    Map<String, Integer> FRUITS = Map.of("Apple", 5, "Banana", 15, "Orange", 10);
+    Integer FRUIT_MAX = 4;
     Integer FRUIT_FALL_SPEED = 3;
 
     Integer[] APPLE_RECT = {0, 0, 10, 10}; // APPLE_RECT = {x, y, w, h}
@@ -58,6 +61,8 @@ public interface Constants {
 
     // Snapjaw
 
+    String[] SNAPJAWS = {"FallingSnapjaw", "HangingSnapjaw"};
+    Integer SNAPJAW_MAX = 4;
     Integer SNAPJAW_SPEED_MIN = 3; // SNAPJAW_SPEED_MIN > JUNIOR_NORMAL_SPEED
     Integer[] SNAPJAW_RECT = {100, 150, 10, 10}; // SNAPJAW_RECT = {x, y, w, h}
 
@@ -72,6 +77,9 @@ public interface Constants {
 
 
     // Server
+
+    Integer SERVER_CLIENTS_MAX = 2;
+    Integer SERVER_CLIENT_OBSERVERS_MAX = 2;
 
     String ASCII_NAME =
             """

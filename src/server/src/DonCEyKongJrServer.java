@@ -18,6 +18,7 @@ I Semester
 2023
 */
 
+import game.Game;
 import game.assets.AssetFactoryProducer;
 import game.assets.entities.Entity;
 import game.assets.entities.EntityAbstractFactory;
@@ -30,6 +31,7 @@ import org.json.JSONObject;
 import utils.Constants;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class DonCEyKongJrServer {
     public static void main(String[] args) {
@@ -98,5 +100,13 @@ public class DonCEyKongJrServer {
 
         JSONObject jo = new JSONObject(ss);
         System.out.println(jo);
+
+        Game g = new Game(players[0]);
+        List<Fruit> ffff = g.getFruits();
+        for (Fruit f:
+             ffff) {
+            System.out.println(f.getId());
+            System.out.println(f.getScore());
+        }
     }
 }
