@@ -6,11 +6,11 @@ import game.play.Play;
 import utils.Constants;
 import utils.DataTypes;
 
+import java.util.Arrays;
+
 public final class Player {
 
-    private static Integer playersGenerated = 0;
-
-    private Integer id;
+    private String username;
     private Integer health;
     private Integer score;
     private Integer level;
@@ -19,8 +19,8 @@ public final class Player {
     private Play play;
 
 
-    public Player() {
-        this.id = ++playersGenerated;
+    public Player(String username) {
+        this.username = username;
         this.health = Constants.PLAYER_HEALTH_MIN;
         this.score = 0;
         this.level = 1;
@@ -28,12 +28,16 @@ public final class Player {
         this.junior = new Junior(Constants.JUNIOR_RECT);
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getId(Player[] players) {
+        return Arrays.asList(players).indexOf(this);
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public Integer getHealth() {

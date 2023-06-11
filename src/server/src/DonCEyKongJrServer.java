@@ -63,9 +63,8 @@ public class DonCEyKongJrServer {
                 };
 
         Player[] players = {
-                new Player(),
-                new Player(),
-                new Player()
+                new Player("P1"),
+                new Player("P2")
         };
 
         for (Fruit f : fruits) {
@@ -93,7 +92,7 @@ public class DonCEyKongJrServer {
         }
 
         for (Player p : players) {
-            System.out.println(p.getId());
+            System.out.println(p.getUsername());
         }
     }
 }
