@@ -8,10 +8,11 @@ set(SOURCE_FILES
         src/DonCEyKongJrClient.c
         )
 
+set(JANSSON_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/include/Jansson/build/include")
 set(SDL2_DIR "${PROJECT_SOURCE_DIR}/include/SDL2/cmake")
 set(SDL2_DLL_LIBRARY "${PROJECT_SOURCE_DIR}/include/SDL2/lib/x64/SDL2.dll")
+
 find_package(SDL2 REQUIRED)
-include_directories(${SDL2_INCLUDE_DIRS})
 
 if (SDL2_FOUND)
     message(STATUS "SDL2_VERSION: ${SDL2_VERSION}")
@@ -20,9 +21,11 @@ if (SDL2_FOUND)
     message(STATUS "SDL2_LIBRARIES: ${SDL2_LIBRARIES}")
 endif ()
 
+include_directories(${SDL2_INCLUDE_DIRS} ${JANSSON_INCLUDE_DIR})
+
 add_executable(${PROJECT_NAME} ${SOURCE_FILES})
 
-target_link_libraries(${PROJECT_NAME} ${SDL2_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} ${SDL2_LIBRARIES} JANSSON)
 
 add_custom_command(
         TARGET ${PROJECT_NAME} POST_BUILD

@@ -18,20 +18,13 @@ I Semester
 2023
 */
 
-import communication.Socket.SocketServer;
+import communication.server.Server;
 import game.Game;
-import game.assets.entities.fruits.Fruit;
-import game.assets.entities.fruits.FruitFactory;
-import game.assets.entities.snapjaws.Snapjaw;
-import game.assets.entities.snapjaws.SnapjawFactory;
 import game.player.Player;
-import javax.json.*;
-
 import org.json.JSONObject;
 import utils.Constants;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 public class DonCEyKongJrServer {
     public static void main(String[] args) {
@@ -39,73 +32,38 @@ public class DonCEyKongJrServer {
 
 
         // TODO : delete all lines below
-
         // testing zone
-
-        FruitFactory FF = new FruitFactory();
-        SnapjawFactory SF = new SnapjawFactory();
-
-        Fruit[] fruits =
-                {
-                        FF.generateFruit(),
-                        FF.generateFruit()
-                };
-        Snapjaw[] snapjaws =
-                {
-                        SF.generateSnapjaw(),
-                        SF.generateSnapjaw()
-                };
 
         Player[] players = {
                 new Player("P1"),
                 new Player("P2")
         };
 
-        for (Fruit f : fruits) {
-            System.out.println(f.getId());
-            System.out.println(f.getSprite());
-            System.out.println(f.getVisible());
-            System.out.println(f.getScore());
-            System.out.println(f.getState());
-            System.out.println(f.getStateAsString());
-            System.out.println(Arrays.toString(f.getPosition()));
-            System.out.println(Arrays.toString(f.getSize()));
-            System.out.println("\n\n");
-        }
+        System.out.println("\n\n\n");
 
-        for (Snapjaw s : snapjaws) {
-            System.out.println(s.getId());
-            System.out.println(s.getSprite());
-            System.out.println(s.getVisible());
-            System.out.println(s.getScore());
-            System.out.println(s.getState());
-            System.out.println(s.getStateAsString());
-            System.out.println(Arrays.toString(s.getPosition()));
-            System.out.println(Arrays.toString(s.getSize()));
-            System.out.println("\n\n");
-        }
+        System.out.println("game_1");
+        Game game_1 = new Game(players[0]);
 
-        for (Player p : players) {
-            System.out.println(p.getUsername());
-        }
+        System.out.println("\n\n\n");
 
-        JsonObject jo = Json.createObjectBuilder().add("Fruit", Json.createObjectBuilder().add("ID",fruits[0].getId()).add("score",fruits[0].getScore())).build();
-        //System.out.println(jo);
-        SocketServer SS = null;
+        JSONObject player_2 = new JSONObject(players[1]);
+
+        Server SS;
         try {
-            SS = SocketServer.getInstance();
+            SS = Server.getInstance();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
         try {
-            SS.WriteToClient(jo);
+            SS.WriteToClient(player_2);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
         try {
             SS.ReadFromClient();
-        }catch (IOException e){
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
@@ -115,10 +73,10 @@ public class DonCEyKongJrServer {
             throw new RuntimeException(e);
         }
 
-        System.out.println("game1");
-        Game g = new Game(players[0]);
-
-        System.out.println("game2");
-        Game gg = new Game(players[0]);
+//        System.out.println("game1");
+//        Game g = new Game(players[0]);
+//
+//        System.out.println("game2");
+//        Game gg = new Game(players[0]);
     }
 }
