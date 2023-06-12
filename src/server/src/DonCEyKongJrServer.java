@@ -41,7 +41,7 @@ public class DonCEyKongJrServer {
 
         System.out.println("\n\n\n");
 
-        System.out.println("game_1");
+        System.out.println("Game_1");
         Game game_1 = new Game(players[0]);
 
         System.out.println("\n\n\n");
@@ -72,11 +72,5 @@ public class DonCEyKongJrServer {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-//        System.out.println("game1");
-//        Game g = new Game(players[0]);
-//
-//        System.out.println("game2");
-//        Game gg = new Game(players[0]);
     }
 }

@@ -106,6 +106,10 @@ public interface Constants {
     Integer SERVER_CLIENTS_MAX = 2;
     Integer SERVER_CLIENT_OBSERVERS_MAX = 2;
 
+    String NOTIFICATION_EMOJI = "\t\uD83D\uDD14 ";
+    String GORILLA_EMOJI = " \uD83E\uDD8D ";
+    String BANANA_EMOJI = " \uD83C\uDF4C ";
+
     String ASCII_NAME =
             """
                         ██████╗  █████╗ ███╗  ██╗ █████╗ ███████╗██╗   ██╗\t\t██╗  ██╗ █████╗ ███╗  ██╗ ██████╗ \t\t     ██╗██████╗\s

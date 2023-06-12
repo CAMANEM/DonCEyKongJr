@@ -46,15 +46,15 @@ public final class Game implements Constants, DataTypes {
     }
 
     private void newGame() {
-        System.out.print("\uD83D\uDD14 " + this.player.getUsername() + " \uD83E\uDD8D LOADING . ");
+        System.out.print(NOTIFICATION_EMOJI + this.player.getUsername() + GORILLA_EMOJI + "LOADING .");
         generateVines();
         generateLands();
         generateTrunks();
-        System.out.print("\uD83C\uDF4C . ");
+        System.out.print(BANANA_EMOJI + ".");
         generateFruits();
-        System.out.print("\uD83C\uDF4C . ");
+        System.out.print(BANANA_EMOJI + ".");
         generateSnapjaws();
-        System.out.println("\uD83C\uDF4C .");
+        System.out.println(BANANA_EMOJI + ".");
     }
 
     private void generateVines() {
