@@ -6,11 +6,13 @@ set(CMAKE_C_STANDARD 17)
 
 set(SOURCE_FILES
         src/DonCEyKongJrClient.c
-        )
+)
 
-set(JANSSON_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/include/Jansson/build/include")
 set(SDL2_DIR "${PROJECT_SOURCE_DIR}/include/SDL2/cmake")
 set(SDL2_DLL_LIBRARY "${PROJECT_SOURCE_DIR}/include/SDL2/lib/x64/SDL2.dll")
+
+set(JANSSON_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/include/Jansson/build/include")
+set(JANSSON_LIBRARY "${PROJECT_SOURCE_DIR}/include/Jansson/build/lib/libjansson_d.a")
 
 find_package(SDL2 REQUIRED)
 
@@ -25,7 +27,7 @@ include_directories(${SDL2_INCLUDE_DIRS} ${JANSSON_INCLUDE_DIR})
 
 add_executable(${PROJECT_NAME} ${SOURCE_FILES})
 
-target_link_libraries(${PROJECT_NAME} ${SDL2_LIBRARIES} JANSSON)
+target_link_libraries(${PROJECT_NAME} ${SDL2_LIBRARIES} ${JANSSON_LIBRARY})
 
 add_custom_command(
         TARGET ${PROJECT_NAME} POST_BUILD
